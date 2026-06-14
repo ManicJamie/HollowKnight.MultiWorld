@@ -1,4 +1,6 @@
-﻿namespace MultiWorldLib.ExportedAPI
+﻿#nullable  enable
+
+namespace MultiWorldLib.ExportedAPI
 {
     /// <summary>
     /// For internal use only.
@@ -10,12 +12,12 @@
         /// An event for when the a player connects or disconnects.
         /// The passed dictionary is the new list of online players.
         /// </summary>
-        public Action<Dictionary<int, string>> OnConnectedPlayersChanged;
+        public Action<Dictionary<int, string>>? OnConnectedPlayersChanged;
 
         /// <summary>
         /// Invoked when data received. Register to this callback once.
         /// </summary>
-        public Action<DataReceivedEvent> OnDataReceived;
+        public Action<DataReceivedEvent>? OnDataReceived;
 
         protected abstract void SendAndQueueData(string label, string data, int to, int ttl = Consts.DEFAULT_TTL, bool isOnJoin = false);
         protected abstract int GetPlayerID(string playerName);

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace MultiWorldLib.Messaging.Definitions
+﻿namespace MultiWorldLib.Messaging.Definitions
 {
     [AttributeUsage(AttributeTargets.Class, Inherited = false)]
     public class MWMessageTypeAttribute : Attribute

@@ -1,4 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<Import Condition="Exists('../HKPath.props')" Project="../HKPath.props" />
+	
 	<PropertyGroup>
 		<ProjectGuid>{19F788C1-6FA8-4F13-AB76-2CCC75B5F159}</ProjectGuid>
 		<TargetFramework>net472</TargetFramework>
@@ -15,84 +18,70 @@
 		</ProjectReference>
 	</ItemGroup>
 	<ItemGroup>
-		<EmbeddedResource Include="Resources\**\*.wav" />
-	</ItemGroup>
-	<ItemGroup>
-	  <None Remove="Resources\Roars\Marmu_Scream0.wav" />
-	  <None Remove="Resources\Roars\Marmu_Scream1.wav" />
-	  <None Remove="Resources\Roars\Marmu_Scream2.wav" />
-	</ItemGroup>
-	<ItemGroup>
 		<Reference Include="Assembly-CSharp">
-			<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed\Assembly-CSharp.dll</HintPath>
+			<HintPath>$(HollowKnightRefs)\hollow_knight_Data\Managed\Assembly-CSharp.dll</HintPath>
 		</Reference>
 		<Reference Include="ItemChanger">
-			<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed\Mods\ItemChanger\ItemChanger.dll</HintPath>
+			<HintPath>$(HollowKnightRefs)\hollow_knight_Data\Managed\Mods\ItemChanger\ItemChanger.dll</HintPath>
 		</Reference>
     <Reference Include="ItemChangerDataLoader">
-      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed\Mods\ItemChangerDataLoader\ItemChangerDataLoader.dll</HintPath>
+      <HintPath>$(HollowKnightRefs)\hollow_knight_Data\Managed\Mods\ItemChangerDataLoader\ItemChangerDataLoader.dll</HintPath>
     </Reference>
 		<Reference Include="MenuChanger">
-			<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed\Mods\MenuChanger\MenuChanger.dll</HintPath>
+			<HintPath>$(HollowKnightRefs)\hollow_knight_Data\Managed\Mods\MenuChanger\MenuChanger.dll</HintPath>
 		</Reference>
 		<Reference Include="MMHOOK_Assembly-CSharp">
-			<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed\MMHOOK_Assembly-CSharp.dll</HintPath>
+			<HintPath>$(HollowKnightRefs)\hollow_knight_Data\Managed\MMHOOK_Assembly-CSharp.dll</HintPath>
 		</Reference>
 		<Reference Include="MMHOOK_PlayMaker">
-			<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed\MMHOOK_PlayMaker.dll</HintPath>
+			<HintPath>$(HollowKnightRefs)\hollow_knight_Data\Managed\MMHOOK_PlayMaker.dll</HintPath>
 		</Reference>
 		<Reference Include="Newtonsoft.Json">
-			<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed\Newtonsoft.Json.dll</HintPath>
+			<HintPath>$(HollowKnightRefs)\hollow_knight_Data\Managed\Newtonsoft.Json.dll</HintPath>
 		</Reference>
 		<Reference Include="PlayMaker">
-			<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed\PlayMaker.dll</HintPath>
+			<HintPath>$(HollowKnightRefs)\hollow_knight_Data\Managed\PlayMaker.dll</HintPath>
 		</Reference>
 		<Reference Include="RandomizerMod">
-			<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed\Mods\Randomizer 4\RandomizerMod.dll</HintPath>
+			<HintPath>$(HollowKnightRefs)\hollow_knight_Data\Managed\Mods\Randomizer 4\RandomizerMod.dll</HintPath>
 		</Reference>
 		<Reference Include="RandomizerCore">
-			<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed\Mods\RandomizerCore\RandomizerCore.dll</HintPath>
+			<HintPath>$(HollowKnightRefs)\hollow_knight_Data\Managed\Mods\RandomizerCore\RandomizerCore.dll</HintPath>
 		</Reference>
 		<Reference Include="RecentItemsDisplay">
-			<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed\Mods\RecentItemsDisplay\RecentItemsDisplay.dll</HintPath>
+			<HintPath>$(HollowKnightRefs)\hollow_knight_Data\Managed\Mods\RecentItemsDisplay\RecentItemsDisplay.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine">
-			<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed\UnityEngine.dll</HintPath>
+			<HintPath>$(HollowKnightRefs)\hollow_knight_Data\Managed\UnityEngine.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.CoreModule">
-			<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+			<HintPath>$(HollowKnightRefs)\hollow_knight_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.AudioModule">
-			<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed\UnityEngine.AudioModule.dll</HintPath>
+			<HintPath>$(HollowKnightRefs)\hollow_knight_Data\Managed\UnityEngine.AudioModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.ImageConversionModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
 			<SpecificVersion>False</SpecificVersion>
-			<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed\UnityEngine.ImageConversionModule.dll</HintPath>
+			<HintPath>$(HollowKnightRefs)\hollow_knight_Data\Managed\UnityEngine.ImageConversionModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.JSONSerializeModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
 			<SpecificVersion>False</SpecificVersion>
-			<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed\UnityEngine.JSONSerializeModule.dll</HintPath>
+			<HintPath>$(HollowKnightRefs)\hollow_knight_Data\Managed\UnityEngine.JSONSerializeModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.TextRenderingModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
 			<SpecificVersion>False</SpecificVersion>
-			<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
+			<HintPath>$(HollowKnightRefs)\hollow_knight_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.UI">
-			<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed\UnityEngine.UI.dll</HintPath>
+			<HintPath>$(HollowKnightRefs)\hollow_knight_Data\Managed\UnityEngine.UI.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.UIModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
 			<SpecificVersion>False</SpecificVersion>
-			<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed\UnityEngine.UIModule.dll</HintPath>
+			<HintPath>$(HollowKnightRefs)\hollow_knight_Data\Managed\UnityEngine.UIModule.dll</HintPath>
 		</Reference>
-		<Reference Include="System" />
-		<Reference Include="System.Core" />
-		<Reference Include="System.Xml.Linq" />
-		<Reference Include="System.Data.DataSetExtensions" />
-		<Reference Include="System.Data" />
-		<Reference Include="System.Xml" />
 	</ItemGroup>
 	<Target Name="CopyMod" AfterTargets="PostBuildEvent">
-		<Copy SourceFiles="$(TargetPath);$(TargetDir)$(TargetName).pdb" DestinationFolder="C:\Program Files (x86)\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed\Mods\$(TargetName)" SkipUnchangedFiles="true" />
+		<Copy SourceFiles="$(TargetPath);$(TargetDir)$(TargetName).pdb" DestinationFolder="$(HollowKnightRefs)\hollow_knight_Data\Managed\Mods\$(TargetName)" SkipUnchangedFiles="true" />
 	</Target>
 	<Target Name="ClearReferenceCopyLocalPaths" AfterTargets="ResolveAssemblyReferences">
 		<ItemGroup>

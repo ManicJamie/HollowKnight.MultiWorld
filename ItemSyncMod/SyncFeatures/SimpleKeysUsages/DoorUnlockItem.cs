@@ -1,8 +1,6 @@
 ﻿using ItemChanger;
-using ItemChanger.Extensions;
 using ItemChanger.Locations;
 using ItemChanger.UIDefs;
-using ItemSyncMod.Items;
 
 namespace ItemSyncMod.SyncFeatures.SimpleKeysUsages
 {

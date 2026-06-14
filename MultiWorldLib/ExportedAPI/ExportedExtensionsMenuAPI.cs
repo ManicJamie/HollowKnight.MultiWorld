@@ -2,6 +2,8 @@
 using MenuChanger.MenuElements;
 using System.Collections.ObjectModel;
 
+#nullable enable
+
 namespace MultiWorldLib.ExportedAPI
 {
     public abstract class ExportedExtensionsMenuAPI
@@ -32,65 +34,65 @@ namespace MultiWorldLib.ExportedAPI
             /// <summary>
             /// Invoked when the menu elements are set to their initial state (e.g. visibility).
             /// </summary>
-            public static event MenuReverted OnMenuRevert;
+            public static event MenuReverted? OnMenuRevert;
             public delegate void MenuReverted();
             internal static void InvokeOnMenuReverted() => OnMenuRevert?.Invoke();
 
             /// <summary>
             /// Connected to the server.
             /// </summary>
-            public static event Connected OnConnected;
+            public static event Connected? OnConnected;
             public delegate void Connected();
             internal static void InvokeOnConnected() => OnConnected?.Invoke();
 
             /// <summary>
             /// Disconnected from the server.
             /// </summary>
-            public static event Disconnected OnDisconnected;
+            public static event Disconnected? OnDisconnected;
             public delegate void Disconnected();
             internal static void InvokeOnDisconnected() => OnDisconnected?.Invoke();
 
             /// <summary>
             /// Player clicked the ready button.
             /// </summary>
-            public static event Ready OnReady;
+            public static event Ready? OnReady;
             public delegate void Ready();
             internal static void InvokeOnReady() => OnReady?.Invoke();
 
             /// <summary>
             /// Player clicked the ready button. Extensions can add metadata here for other clients to read.
             /// </summary>
-            public static event AddReadyMetadata OnAddReadyMetadata;
+            public static event AddReadyMetadata? OnAddReadyMetadata;
             public delegate void AddReadyMetadata(Dictionary<string, string> metadata);
             internal static void InvokeOnAddReadyMetadata(Dictionary<string, string> metadata) => OnAddReadyMetadata?.Invoke(metadata);
 
             /// <summary>
             /// Player clicked the unready button, or was unreadied due to the server denying its ready request.
             /// </summary>
-            public static event Unready OnUnready;
+            public static event Unready? OnUnready;
             public delegate void Unready(); 
             internal static void InvokeOnUnready() => OnUnready?.Invoke();
 
             /// <summary>
             /// Occurs when other players ready or un-ready from the room.
             /// </summary>
-            public static event RoomStateUpdated OnRoomStateUpdated;
+            public static event RoomStateUpdated? OnRoomStateUpdated;
             public readonly record struct RoomState(int ReadyPlayersCount, ReadOnlyCollection<string> ReadyPlayersNames);
             public delegate void RoomStateUpdated(RoomState newState);
             internal static void InvokeOnRoomStateUpdated(int playersCount, string[] playersNames) => 
-                OnRoomStateUpdated?.Invoke(new(playersCount, Array.AsReadOnly(playersNames)));
+                OnRoomStateUpdated?.Invoke(new RoomState(playersCount, Array.AsReadOnly(playersNames)));
 
             /// <summary>
             /// Occurs once the game starts and players can join.
             /// </summary>
-            public static event GameStarted OnGameStarted;
+            public static event GameStarted? OnGameStarted;
             public delegate void GameStarted();
             internal static void InvokeOnGameStarted() => OnGameStarted?.Invoke();
 
             /// <summary>
             /// Occurs when the client joins the game.
             /// </summary>
-            public static event GameJoined OnGameJoined;
+            public static event GameJoined? OnGameJoined;
             public delegate void GameJoined();
             internal static void InvokeOnGameJoined() => OnGameJoined?.Invoke();
 
@@ -98,7 +100,7 @@ namespace MultiWorldLib.ExportedAPI
             /// Invoked once settings should be locked from any changes.
             /// Practically, it is called once a player pressed "Start Game".
             /// </summary>
-            public static event LockSettings OnLockSettings;
+            public static event LockSettings? OnLockSettings;
             public delegate void LockSettings();
             internal static void InvokeOnLockSettings() => OnLockSettings?.Invoke();
 

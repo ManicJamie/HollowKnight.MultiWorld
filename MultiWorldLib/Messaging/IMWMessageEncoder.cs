@@ -1,5 +1,4 @@
-﻿using System.IO;
-using MultiWorldLib.Messaging.Definitions;
+﻿using MultiWorldLib.Messaging.Definitions;
 
 namespace MultiWorldLib.Messaging
 {

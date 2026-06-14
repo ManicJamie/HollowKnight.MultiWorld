@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace MultiWorldLib.Messaging.Definitions.Messages
+﻿namespace MultiWorldLib.Messaging.Definitions.Messages
 {
     [MWMessageType(MWMessageType.PingMessage)]
     public class MWPingMessage : MWMessage

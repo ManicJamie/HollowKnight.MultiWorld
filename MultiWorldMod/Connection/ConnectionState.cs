@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace MultiWorldMod.Connection
+﻿namespace MultiWorldMod.Connection
 {
     public class ConnectionState
     {

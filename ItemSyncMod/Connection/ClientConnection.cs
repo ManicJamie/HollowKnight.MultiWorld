@@ -399,7 +399,7 @@ namespace ItemSyncMod
             }
         }
 
-        private static ItemSyncMenu? menuListener = null;
+        private static ItemSyncMenu menuListener = null;
 
         internal static void SetMenuListener(ItemSyncMenu listener)
         {

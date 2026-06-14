@@ -1,5 +1,4 @@
 ﻿using MenuChanger.MenuElements;
-using UnityEngine.UI;
 
 namespace MultiWorldMod.MenuExtensions
 {

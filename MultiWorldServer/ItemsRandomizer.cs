@@ -173,7 +173,7 @@ namespace MultiWorldServer
 
         internal string GetGenerationHash()
         {
-            using (SHA256Managed sHA256Managed = new SHA256Managed())
+            using (SHA256 sha256 = SHA256.Create())
             using (StringWriter stringWriter = new StringWriter())
             {
                 JsonSerializer jsonSerializer = new JsonSerializer
@@ -187,7 +187,7 @@ namespace MultiWorldServer
                 StringBuilder stringBuilder = stringWriter.GetStringBuilder();
                 stringBuilder.Replace("\r", string.Empty);
                 stringBuilder.Replace("\n", string.Empty);
-                byte[] array = sHA256Managed.ComputeHash(Encoding.UTF8.GetBytes(stringBuilder.ToString()));
+                byte[] array = sha256.ComputeHash(Encoding.UTF8.GetBytes(stringBuilder.ToString()));
 
                 int hash = 17;
                 for (int i = 0; i < array.Length; i++)

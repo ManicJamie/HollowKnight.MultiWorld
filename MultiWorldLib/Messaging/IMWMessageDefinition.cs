@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using MultiWorldLib.Messaging.Definitions;
+﻿using MultiWorldLib.Messaging.Definitions;
 
 namespace MultiWorldLib.Messaging
 {

@@ -1,6 +1,4 @@
-﻿using RandomizerMod.RC;
-
-namespace MultiWorldMod
+﻿namespace MultiWorldMod
 {
     public class GlobalSettings
 	{

@@ -1,7 +1,6 @@
 ﻿using ItemChanger;
 using ItemChanger.UIDefs;
 using ItemSyncMod.Items.DisplayMessageFormatter;
-using Newtonsoft.Json;
 
 namespace ItemSyncMod.Items
 {

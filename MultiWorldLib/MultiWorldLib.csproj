@@ -1,7 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+	<Import Condition="Exists('../HKPath.props')" Project="../HKPath.props" />
+	
 	<PropertyGroup>
 		<ProjectGuid>{AA8E9B61-F279-48DE-8B14-431811D5C99D}</ProjectGuid>
-		<TargetFramework>net472</TargetFramework>
+		<TargetFramework>netstandard2.0</TargetFramework>
 		<RootNamespace>MultiWorldLib</RootNamespace>
 		<AssemblyName>MultiWorldLib</AssemblyName>
 		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
@@ -10,30 +12,22 @@
 		<ImplicitUsings>true</ImplicitUsings>
 	</PropertyGroup>
 	<ItemGroup>
-		<Reference Include="System" />
-		<Reference Include="System.Core" />
-		<Reference Include="System.Xml.Linq" />
-		<Reference Include="System.Data.DataSetExtensions" />
-		<Reference Include="System.Data" />
-		<Reference Include="System.Xml" />
-	</ItemGroup>
-	<ItemGroup>
 		<Reference Include="Assembly-CSharp">
-			<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed\Assembly-CSharp.dll</HintPath>
+			<HintPath>$(HollowKnightRefs)\hollow_knight_Data\Managed\Assembly-CSharp.dll</HintPath>
 		</Reference>
 		<Reference Include="Newtonsoft.Jsonp">
-			<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed\Newtonsoft.Json.dll</HintPath>
+			<HintPath>$(HollowKnightRefs)\hollow_knight_Data\Managed\Newtonsoft.Json.dll</HintPath>
 		</Reference>
 		<Reference Include="ItemChanger">
-			<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed\Mods\ItemChanger\ItemChanger.dll</HintPath>
+			<HintPath>$(HollowKnightRefs)\hollow_knight_Data\Managed\Mods\ItemChanger\ItemChanger.dll</HintPath>
 		</Reference>
 		<Reference Include="MenuChanger">
 			<!-- Only necessary for MultiWorld/ItemSync-->
-			<HintPath>C:\Program Files (x86)\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed\Mods\MenuChanger\MenuChanger.dll</HintPath>
+			<HintPath>$(HollowKnightRefs)\hollow_knight_Data\Managed\Mods\MenuChanger\MenuChanger.dll</HintPath>
 		</Reference>
 	</ItemGroup>
 	<Target Name="CopyMod" AfterTargets="PostBuildEvent">
-		<Copy SourceFiles="$(TargetPath);$(TargetDir)$(TargetName).pdb" DestinationFolder="C:\Program Files (x86)\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed\Mods\$(TargetName)" SkipUnchangedFiles="true" />
+		<Copy SourceFiles="$(TargetPath);$(TargetDir)$(TargetName).pdb" DestinationFolder="$(HollowKnightRefs)\Managed\Mods\$(TargetName)" SkipUnchangedFiles="true" />
 	</Target>
 	<Target Name="ClearReferenceCopyLocalPaths" AfterTargets="ResolveAssemblyReferences">
 		<ItemGroup>

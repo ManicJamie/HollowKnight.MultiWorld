@@ -1,34 +1,24 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+  <Import Condition="Exists('../HKPath.props')" Project="../HKPath.props" />
+  
   <PropertyGroup>
     <ProjectGuid>{222A6FC2-BCD5-4127-A4DA-F55B926C879C}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>MultiWorldServer</RootNamespace>
     <AssemblyName>MultiWorldServer</AssemblyName>
-	<TargetFramework>net472</TargetFramework>
+	<TargetFramework>net10.0</TargetFramework>
 	<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json">
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed\Newtonsoft.Json.dll</HintPath>
+      <HintPath>$(HollowKnightRefs)\hollow_knight_Data\Managed\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MultiWorldLib\MultiWorldLib.csproj">
       <Project>{aa8e9b61-f279-48de-8b14-431811d5c99d}</Project>
       <Name>MultiWorldLib</Name>
     </ProjectReference>
-    <Reference Include="Assembly-CSharp">
-      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed\Assembly-CSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="ItemChanger">
-      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Hollow Knight\hollow_knight_Data\Managed\Mods\ItemChanger\ItemChanger.dll</HintPath>
-    </Reference>
   </ItemGroup>
 </Project>
